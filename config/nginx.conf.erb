@@ -13,13 +13,13 @@ http {
 		listen 80;
 
 		location / {
-			proxy_pass "codelitt.com";
+			proxy_pass "http://codelitt.com";
 			proxy_http_version 1.1;
 			proxy_buffering off;
 		}
 		
 		location /blog {
-			proxy_pass "blog.codelitt.dev";	
+			proxy_pass "http://blog.codelitt.dev";	
 			proxy_http_version 1.1;
 			proxy_buffering off;
 		}
