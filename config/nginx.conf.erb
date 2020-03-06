@@ -10,7 +10,7 @@ events {
 http {
 	access_log /dev/stdout;
 	server {
-		listen 8080;
+		listen <%= ENV["PORT"] %>;
 
 		location / {
 			proxy_pass "http://codelitt.com";
