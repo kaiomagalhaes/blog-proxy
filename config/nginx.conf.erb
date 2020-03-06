@@ -16,6 +16,7 @@ http {
 
 		location / {
 			proxy_pass http://codelitt.com;
+			fastcgi_pass unix:/run/php/php7.2-fpm.sock;
 		}
 		
 		location /blog {
