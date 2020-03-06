@@ -12,6 +12,7 @@ http {
 	server {
 		listen <%= ENV["PORT"] %>;
 		server_name prod-website-proxy.herokuapp.com;
+		proxy_ssl_server_name on;
 
 
 		location / {
