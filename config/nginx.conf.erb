@@ -13,11 +13,11 @@ http {
 		listen <%= ENV["PORT"] %>;
 
 		location / {
-			proxy_pass http://codelitt.com/;
+			proxy_pass http://codelitt.com;
 		}
 		
 		location /blog {
-			proxy_pass http://blog.codelitt.dev/;	
+			proxy_pass http://blog.codelitt.dev;	
 		}
 	}
 }
