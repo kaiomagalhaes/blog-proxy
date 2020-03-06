@@ -11,17 +11,12 @@ http {
 	access_log /dev/stdout;
 	server {
 		listen <%= ENV["PORT"] %>;
-		server_name prod-website-proxy.herokuapp.com;
+		server_name blog-proxy.herokuapp.com/;
 		proxy_ssl_server_name on;
 
 
 		location / {
-			proxy_pass http://www.codelitt.com;
-		}
-		
-		location /blog {
-			proxy_ssl_server_name on;
-			proxy_pass https://dev-codelitt-blog.herokuapp.com;	
-		}
+			proxy_pass https://dev-codelitt-blog.herokuapp.com/blog;
+		}		
 	}
 }
