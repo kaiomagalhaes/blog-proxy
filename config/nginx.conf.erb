@@ -16,7 +16,18 @@ http {
 
 
 		location / {
-			proxy_pass https://dev-codelitt-blog.herokuapp.com/blog;
+			proxy_pass https://blog-proxy.herokuapp.com/blog;
+		}		
+	}
+
+	server {
+		listen <%= ENV["PORT"] %>;
+		server_name blog-proxy.herokuapp.com/;
+		proxy_ssl_server_name on;
+
+
+		location /blog {
+			proxy_pass https://dev-codelitt-blog.herokuapp.com;
 		}		
 	}
 }
