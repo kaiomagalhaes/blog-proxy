@@ -20,8 +20,6 @@ http {
 		}
 		
 		location /blog {
-			sub_filter '/assets/'  '/blog/assets/';
-			sub_filter_once off;
 			proxy_ssl_server_name on;
 			proxy_pass https://dev-codelitt-blog.herokuapp.com;	
 		}
