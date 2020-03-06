@@ -11,6 +11,8 @@ http {
 	access_log /dev/stdout;
 	server {
 		listen <%= ENV["PORT"] %>;
+		server_name prod-website-proxy.herokuapp.com/;
+
 
 		location / {
 			proxy_pass http://codelitt.com;
