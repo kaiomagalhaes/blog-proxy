@@ -15,12 +15,11 @@ http {
 
 
 		location / {
-			proxy_pass http://codelitt.com;
-			fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+			proxy_pass /codelitt.com;
 		}
 		
 		location /blog {
-			proxy_pass http://blog.codelitt.dev;	
+			proxy_pass blog.codelitt.dev;	
 		}
 	}
 }
